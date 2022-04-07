@@ -1,0 +1,2 @@
+/etc/asterisk/sip.conf           --настройка клиентов и основные настройки
+/etc/asterisk/extensions.conf    --найстройка входящих и исходящих звонков
