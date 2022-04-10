@@ -1,0 +1,11 @@
+Django
+
+
+python[3] -m pip install Django  --+--установка Django
+                                   |
+pip install Django[==версия]     --+
+
+pip uninstall Django             --удаление
+
+
+django-admin startproject <имя_проекта>   --
