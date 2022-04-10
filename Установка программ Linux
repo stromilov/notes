@@ -1,0 +1,28 @@
+Установка программ Linux
+
+
+PPA репозитории Ubuntu находятся на сайте, созданном Canonical - launchpad.net
+
+PPA (Personal Package Archive)  --архив личных пакетов
+
+
+Репозиторий Linux
+
+
+Main       -- основная ветка - стабильное официально поддерживаемое Canonical ПО
+Restricted -- официально поддерживаемое ПО распространяемое не под лицензией GPL
+Universe   -- программы, поддерживаемые сообществом Ubuntu
+Multiverse -- ветка проприетарного программного обеспечения
+
+/etc/apt                   --настройки репозиториев
+/etc/apt/sources.list      --списко официальных репозиториев
+/etc/apt/sources.list.d/*  --для каждого PPA репозитория создается отдельный файл в каталоге
+
+
+ apt-add-repository "deb <адрес_репозитория> <имя_версии_ОС> <имя_ветки>"   --добавление репозитория
+ 
+ Пример:
+ apt-add-repository "deb http://ppa.launchpad.net/shutter/ppa/ubuntu wily main"
+
+
+
