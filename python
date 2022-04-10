@@ -1,0 +1,8 @@
+python
+
+
+apt install python[3]  --установка python
+
+apt install pip        --установка пакетного менеджера pip
+
+pip list               --список установленных пакетов
