@@ -1,1 +1,11 @@
 
+OpenSSH
+
+
+apt install openssh-server      --установка OpenSSH сервера
+
+systemctl enable sshd           --довать в автозагрузку
+systemctl disable sshd          --удалить из автозагрузки
+
+
+/etc/ssh/sshd_config      --файл настроек ssh
