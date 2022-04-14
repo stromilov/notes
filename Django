@@ -8,4 +8,10 @@ pip install Django[==версия]     --+
 pip uninstall Django             --удаление
 
 
-django-admin startproject <имя_проекта>   --
+django-admin startproject <имя_проекта>          --создать папку с проектом
+
+
+python[3] manage.py runserver [ip-адрес:порт]    --запуск встроенного сервера на адресе (0.0.0.0:8000)
+
+python[3] manage.py startapp <имя_приложения>    --создание нового пустого приложения
+
