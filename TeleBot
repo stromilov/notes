@@ -53,5 +53,17 @@ bot.polling()                                    -- Бот работает и �
 
 
 
+message.chat.id                --Идентификатор чата
+message.from_user.id           --Идентификатор пользователя
+message.text                   --Текст сообщения
+message.from_user.first_name   --Имя
+message.from_user.last_name    --Фамилия 
+message.from_user.username     --Псевдоним 
+message.chat.type              --Тип чата 
+message.id                     --Идентификатор сообщения 
+message.content_type           --Тип контента сообщения
+
+
+
 
 
