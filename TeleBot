@@ -15,17 +15,43 @@ BotFather       --бот для создания ботов (у настояще
                   
 /mybots         --отображает что можно поменять в боте                
  |
- +--/API Token  
+ +--/API Token                  --получить/изменить токен
  |   |
- |   +--/Edit Name
- |   +--/Edit Description
- |   +--/Edit About
- |   +--/Edit Botpic
+ |   +--/Edit Name              --изменить имя
+ |   +--/Edit Description       --изменить описание
+ |   +--/Edit About             --изменить краткое описание
+ |   +--/Edit Botpic            --изменить аватарку
  |   +--/Edit Commands
  |   +--/Edit inline placeholder
  |
  +--/Edit Bot
  +--/Bot Settings
- +--/Payments
- +--/Tranfer Ownership
- +--/Delete Bot
+ |   |
+ |   +--/Inline Mode            --можно вызвать бота введя его имя и команду в любом чате
+ |   +--/Inline Location Data
+ |   +--/Inline Feedbeck
+ |   +--/Allow Groups?          --разрешить/запретить добавлять бота в чаты
+ |   +--/Group Privacy          --выключать/включать Privacy mode у бота
+ |   +--/Group Admin Rights
+ |   +--/Channel Admin Rights
+ |   +--/Payments               --подключить платежные системы
+ |   +--/Domain                 --связать домен сайта с ботом
+ |   +--/Menu Button
+ |  
+ +--/Payments                   --подключить платежные системы
+ +--/Tranfer Ownership          --передать владение другому пользователю
+ +--/Delete Bot                 --удалить бота
+
+
+Команды библиотеки telebot:
+ 
+telebot.Telebot('токен')                         --инициализация бота
+
+@bot.message_handler(commands=['<сообщение>'])   --декоратор, реагируте на входящие сообщения
+
+bot.polling()                                    -- Бот работает и ждёт команд
+
+
+
+
+
