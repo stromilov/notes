@@ -1,6 +1,8 @@
 Telegram Bot
 
 
+pip3 install pyTelegramBotAPI   --установка
+
 BotFather       --бот для создания ботов (у настоящего должна стоять галочка)
 
 
