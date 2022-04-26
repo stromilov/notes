@@ -67,5 +67,15 @@ message.content_type           --Тип контента сообщения
 
 
 
+Фильтры обработчиков
+
+Имя              Аргумент(ы)              Условие
+
+content_types    Список строк             True если message.content_type в списке строк.
+regexp           Регулярное выражение
+                 как строка               True если re.search(regexp_arg) возвращает True и message.content_type == 'text'
+commands         Список строк	            True если message.content_type == 'text' и message.text начинается с команды, которая есть в списке строк.
+chat_types       Список chat types	      True если message.chat.type в вашем фильтре
+func             Функция	                True если функция возвращает True
 
 
