@@ -3,3 +3,6 @@ Raspberry
 
 login:    pi
 password: raspberry
+
+
+vcgencmd measure_temp      --температура процссора
