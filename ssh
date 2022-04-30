@@ -4,8 +4,10 @@ OpenSSH
 
 apt install openssh-server      --установка OpenSSH сервера
 
-systemctl enable sshd           --довать в автозагрузку
+systemctl enable sshd           --добавить в автозагрузку
 systemctl disable sshd          --удалить из автозагрузки
+
+ssh <логин>:<pi-адрес>          --подключиться по ssh
 
 
 /etc/ssh/sshd_config      --файл настроек ssh
