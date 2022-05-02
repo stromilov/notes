@@ -86,4 +86,38 @@ bridge   --этот режим назначает и устанавливает 
 docker network ls               --список сетей
 
 
-docker 
+docker exec <команда>           --запуск команды внутри контейнера
+
+Информация о контейнере
+
+docker diff                     --
+docker events                   --
+docker inspect                  --
+docker logs                     --
+docker port                     --
+docker ps                       --
+docker top                      --общая информация о процессах
+
+
+
+Работа с образами
+
+docker build
+docker commit
+docker export
+docker history
+docker images
+docker import
+docker load
+docker rmi
+docker save
+docker tag
+
+Работа с реестром
+
+docker login
+docker logout
+docker pull
+docker push
+docker search
+
