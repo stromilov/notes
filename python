@@ -21,6 +21,16 @@ n = input("введите число")                                        --
 "Ada Lovelace   ".rstrip() ->  "Ada Lovelace"                     --удаляет пробелы справа
 " Ada Lovelace ".strip()   ->  "AdaLovelace"                      --удаляет пробелы везде
 
+"abc123".isalnum()  ->  True    --состоит ли строка из букв и цифр
+"ABCabc".isalpha()  ->  True    --состоит ли строка только из букв
+"1234567".isdigit() ->  True    --состоит ли строка только из цифр
+"abc".islower()     ->  True    --только из букв нижнего регистра
+"ФИО".isupper()     ->  True    --только из букв верхнего регистра
+"     ".isspace()   ->  True    --только из пробельных символов
+ord('A')            ->  65      --код символ в ASCII
+chr(65)             ->  'A'     --символ по коду
+
+
 \t       --табуляция
 \n       --перевод на новую строку
 
@@ -44,7 +54,11 @@ sorted(n)           --возращает копию отсортированно
 n.reverse()         --переставляет элементы в обратном порядке
 len(n)              --вычесляет длинну списка 
 list('word')  ->  ['w', 'o', 'r', 'd']    --создать список
-
+2 in [2, 3, 4]     -> True
+max([2, 3, 4])     -> 4
+min([2, 3, 4])     -> 2
+sum([2, 3, 4])     -> 9
+ 
 
 for i in list:                  --печать всех элементов массива list
   print(i)
@@ -59,7 +73,7 @@ for a in list_a:
       if a + b + c == 1000:
       
       
-Строки
+
       
 from itertools import product
 for a, b, c in product(list_a, list_b, list_c):
@@ -70,7 +84,37 @@ range(5) -> 1 2 3 4                --генерирует список нату�
 
 [x ** 2 for x in range(1, 10)]     --генератор
 
-срезы
+Строки
+
+"foO BaR BAZ quX".capitalize()  ->  Foo bar baz qux
+
+"FOO Bar 123 baz qUX".swapcase() -> foo bAR 123 BAZ Qux
+
+"the sun also rises".title()     -> The Sun Also Rises
+
+"FOO Bar 123 baz qUX".lower() -> foo bar 123 baz qux
+
+"FOO Bar 123 baz qUX".upper()  -> FOO BAR 123 BAZ QUX
+
+
+'foo goo moo'.count('oo')         ->  3
+'foo goo moo'.count('oo', 0, 8)   ->  2    (подсчет с 0 по 8 символы)
+
+"foobar".startswith('foo')        ->  True
+"oobar".startswith('baz')         ->  False
+
+"foobar".endswith('bar')          ->  True
+"foobar".endswith('baz')          ->  False
+
+"foo bar foo baz foo qux".find('foo'))        ->   0   (индекс найденной подстроки)
+"foo bar foo baz foo qux".find('bar'))        ->   4
+"foo bar foo baz foo qux".rfind('o'))         ->   18  (поиск начинается справа)
+"foo bar foo baz foo qux".find('python'))     ->   -1
+
+index(<sub>, <start>, <end>) идентичен методу find
+
+
+Срезы
 
 Положительные индексы	   0   1	 2	 3	 4	 5	 6	 7	 8	 9
 Строка	                 a   b	 c   d   e   f   g   h   i 	 j
