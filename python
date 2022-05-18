@@ -58,7 +58,10 @@ list('word')  ->  ['w', 'o', 'r', 'd']    --создать список
 max([2, 3, 4])     -> 4
 min([2, 3, 4])     -> 2
 sum([2, 3, 4])     -> 9
- 
+[2, 4].extended([5, 1])  -> [2, 4, 5, 1] 
+
+print(*[0, 1, 2, 3])   ->   0 1 2 3
+
 
 for i in list:                  --печать всех элементов массива list
   print(i)
@@ -72,8 +75,6 @@ for a in list_a:
     for c in list_c:
       if a + b + c == 1000:
       
-      
-
       
 from itertools import product
 for a, b, c in product(list_a, list_b, list_c):
@@ -112,6 +113,12 @@ range(5) -> 1 2 3 4                --генерирует список нату�
 "foo bar foo baz foo qux".find('python'))     ->   -1
 
 index(<sub>, <start>, <end>) идентичен методу find
+
+"Python is the most powerful language".split()  ->   ['Python', 'is', 'the', 'most', 'powerful', 'language']
+"192.168.1.24".split('.')  ->  ['192', '168', '1', '24']
+
+
+' '.join(['Python', 'is', 'the', 'most', 'powerful', 'language'])   ->   Python is the most powerful language
 
 
 Срезы
