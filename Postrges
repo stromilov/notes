@@ -1,1 +1,154 @@
-psql
+postgres
+
+sudo service postgresql start
+sudo service postgresql stop
+sudo service postgresql restart
+sudo service postgresql reload
+
+--сменить пароль
+  1. /etc/postgresql/13/main/pg_hba.conf
+  2. host пользователь       md5 -> trust
+  3. sudo service postgresql reload
+  4. psql -U пользователь -h 127.0.0.1
+  5. alter role пользователь password 'пароль';
+  6. sudo service postgresql reload
+
+
+psql имя_базы имя_польз.  --?
+
+\l - список баз данных
+\d - таблицы
+\q - выход
+\с - переключиться на другую таблицу
+\du - список пользователей
+\dt - списко таблиц
+\d - описание таблицы
+\! - выполнить внешнюю команду shell
+
+psql -f файл.sql имя_базы - запуск запроса из файла
+
+Имя              Размер     Описание                            Диапазон
+smallint         2 байта    целое в небольшом диапазоне         -32768 .. +32767
+integer          4 байта    типичный выбор для ц                -2147483648 .. +2147483647
+bigint           8 байт     целое в большом диапазоне           -9223372036854775808 .. 9223372036854775807
+real             4 байта    вещественное число
+smallserial      2 байта    небольшое целое с автоувеличением   1 .. 32767
+serial           4 байта    целое с автоувеличением             1 .. 2147483647
+
+
+--создать базу данных
+create database имя_базы;
+
+--удалить базу данных
+drop database if exists имя_базы;
+
+--создать таблицу
+create table имя 
+(
+    id        smallserial    primary key,
+    firstname character      vaying(30) not null,
+    lastname  character      varying(30) not null,
+    email     character      varying(30),
+)
+
+--удалить таблицу
+drop table таблица1 [, таблица2, ...];
+
+--удалить столбец
+alter table таблица drop column столбец;
+
+
+--выбрать все элементы из таблицы
+select * from таблица;
+
+--добавить столбец
+alter table имя_таблицы add столбец тип;
+
+--добавить несколько столбцов
+alter table имя_таблицы
+add столбец_1 тип,
+add столбец_2 тпи, 
+....;
+
+
+--изменить тип столбца
+alter table имя_таблицы 
+alter column имя_столбца type новый_тпи;
+
+--изменить имя таблицы
+alter table имя_таблицы
+rename to новое_имя_таблицы;
+
+--изменение одного значения
+update имя_таблицы
+set столбец = значение
+where столбец = условие
+
+--добавить ограничение
+alter table имя_таблицы 
+add constraint имя_ограничения unique (столбец);
+
+--сгруппировать по одинаковым email и выдать > 1
+--email | count
+--------+-------
+--      | 248   
+select столбец, count(*) from employee 
+group by email having count(*) > 1;
+
+--удалить ограничение
+alter table имя_таблицы drop constraint имя_ограничения;
+
+--внешний ключ. тип должен быть одинаковый у обоих
+столбец1 тип references таблица2(столбец2)
+
+--добавить значение в таблицу
+insert into таблица (столбец1, ..) values (значение1, ..); 
+
+--удалить значение из таблицы
+delete from имя_таблицы where условие;
+
+--удалить все строки
+delete from имя_таблицы;
+
+--добавить ограничение primary key
+alter table имя_таблицы
+add constraint имя_ограничения
+primary key (имя_столбца);
+
+
+--агрегатные функции
+sum(имя_столбца)            --сумма
+min(имя_столбца)            --минимум
+max(имя_столбца)            --максимум
+avg(имя_столбца)            --cреднее арифметическое
+round(имя_таблицы)          --округлить
+count(имя_столбца)          --количество элементов
+count(distinct имя_столбца) --количество уникальных элементов
+число ^ степень_число       --возведение в степень
+
+
+--сгруппировать по уникальным значениям
+select snum, sum(amt) as 'сумма всех заказов'
+from таблица 
+group by snum;
+
+--добавить условия для группировки
+select snum, sum(amt) as 'Сумма всех заказов'
+from таблица 
+group by столбец 
+having max(amt) > 1000;
+
+--имена начинаются с буквы Г
+select name
+from таблица
+where name like 'Г%';
+
+--ограничить выборку
+select * from таблица limit число;
+
+--с какой позиции
+select * from таблица offset 10 limit 5;
+
+--показать не повторяющиеся
+select distinct имя_столбца from таблица;
+
